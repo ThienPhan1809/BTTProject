@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View, Dimensions, TextInput } from 'react-native'
-import Button from '../Component/Button'
-import Header from '../Component/Header'
-import ChooseLocationScreen from './ChooseLocationScreen'
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { Component } from 'react';
+import { Text, StyleSheet, View } from 'react-native';
+
+import Header from '../../Component/Header';
+import Button from '../../Component/Button';
+import ChooseLocation from './ChooseLocation';   
 
 export default class index extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Header text='CHỌN ĐỊA CHỈ'/>
+                <Header text='CHỌN ĐỊA CHỈ' />
                 <View style={styles.mapContainer}>
-                    <ChooseLocationScreen/>
+                    <ChooseLocation />
                 </View>
                 <View style={styles.textContainer}>
-                    <Text style={{fontSize: 16, fontWeight: 'bold', marginLeft: 12,}}>Địa chỉ được chọn: </Text>
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', marginLeft: 12 }}>
+                        Địa chỉ được chọn: 
+                    </Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button text='HOÀN THÀNH'/>
+                    <Button text='HOÀN THÀNH' />
                 </View>
             </View>
-        )
+        );
     }
-};
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -29,17 +34,17 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: '#DFDFF4'
     },
-    mapContainer:{
+    mapContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
     },
-    textContainer:{
+    textContainer: {
         flex: 1,
         justifyContent: 'center',
-        flexDirection:'row',
+        flexDirection: 'row',
     },
-    buttonContainer:{
+    buttonContainer: {
         height: 68,
         justifyContent: 'center',
         alignItems: 'center',

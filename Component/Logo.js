@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View, Dimensions, Image } from 'react-native'
+/* eslint-disable global-require */
+import React, { Component } from 'react';
+import { Text, StyleSheet, View, Dimensions, Image } from 'react-native';
 
-let W = Dimensions.get('screen').width;
+const W = Dimensions.get('window').width;
 
 export default class Logo extends Component {
     render() {
@@ -15,35 +16,35 @@ export default class Logo extends Component {
                     <Text style={styles.text}>LÀ VE CHAI</Text>
                 </View>
             </View>
-        )
+        );
     }
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         height: 146,
         width: W,
         backgroundColor: '#5FE94950',
-        flexDirection:'row',
+        flexDirection: 'row',
         borderRadius: 12,
     },
-    logoContainer:{
-        width: W/2,
+    logoContainer: {
+        width: W * (2 / 5),
         justifyContent: 'center',
     },
-    sloganContainer:{
-        width: W/2,
-        alignItems:'center',
+    sloganContainer: {
+        width: W * (3 / 5),
         justifyContent: 'center',
+        alignItems: 'center',
     },
-    logo:{
+    logo: {
         width: 118,
         height: 110,
         marginLeft: 33,
         borderRadius: 12,
     },
-    text:{
+    text: {
         fontSize: 14,
-        fontWeight:'bold',
+        fontWeight: 'bold',
     },
-})
+});

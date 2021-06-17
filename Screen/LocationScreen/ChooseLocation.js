@@ -1,8 +1,10 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { Component } from 'react';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import MapView, { PROVIDER_GOOGLE, } from 'react-native-maps';
+import { StyleSheet, Dimensions } from 'react-native';
 
-export default class ChooseLocationScreen extends Component {
+export default class ChooseLocation extends Component {
   render() {
     return (
         <MapView
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   map: {
-    width: Dimensions.get('window').width-20,
+    width: Dimensions.get('window').widt - 20,
     height: 400,
   },
 });

@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class Button extends Component {
+const H = Dimensions.get('window').height;
+
+export default class ButtonSetting extends Component {
     render() {
         return (
             <TouchableOpacity style={styles.container}>
-                <Text style={styles.text}>{this.props.text}</Text>
+                <Text style={styles.text}> {this.props.text} </Text>
             </TouchableOpacity>
         );
     }
@@ -15,19 +17,19 @@ export default class Button extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        height: 60,
-        width: Dimensions.get('window').width - (2 * 31),
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: H / 12,
         backgroundColor: '#C4C4C4',
-        borderRadius: 12,
+        justifyContent: 'center',
+        borderWidth: 1,
+        marginTop: 2,
     },
     text: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    }
+        marginLeft: 24,
+        fontSize: 20,
+        fontWeight: '500',
+    },
 });
 
-Button.propTypes = {
+ButtonSetting.propTypes = {
     text: PropTypes.string.isRequired,
 };

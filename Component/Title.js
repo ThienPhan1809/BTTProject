@@ -1,33 +1,31 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { Component } from 'react';
-import { Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class Button extends Component {
+export default class Title extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.container}>
+            <View style={styles.titleContainer}>
                 <Text style={styles.text}>{this.props.text}</Text>
-            </TouchableOpacity>
+                <Text style={styles.text}>----------------------------------</Text>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        height: 60,
-        width: Dimensions.get('window').width - (2 * 31),
+    titleContainer: {
+        marginVertical: 12,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#C4C4C4',
-        borderRadius: 12,
     },
     text: {
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
     }
 });
 
-Button.propTypes = {
+Title.propTypes = {
     text: PropTypes.string.isRequired,
 };

@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
-import {View, Button, Platform} from 'react-native';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+
+import React, { useState } from 'react';
+import { View, Button, Platform } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 export const App = () => {
@@ -39,7 +42,7 @@ export const App = () => {
           testID="dateTimePicker"
           value={date}
           mode={mode}
-          is24Hour={true}
+          is24Hour
           display="default"
           onChange={onChange}
         />

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class Button extends Component {
+export default class PayButton extends Component {
     render() {
         return (
             <TouchableOpacity style={styles.container}>
@@ -16,7 +16,7 @@ export default class Button extends Component {
 const styles = StyleSheet.create({
     container: {
         height: 60,
-        width: Dimensions.get('window').width - (2 * 31),
+        width: Dimensions.get('screen').width - (2 * 31),
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#C4C4C4',
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     }
 });
 
-Button.propTypes = {
+PayButton.propTypes = {
     text: PropTypes.string.isRequired,
 };
