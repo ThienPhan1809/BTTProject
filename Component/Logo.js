@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         width: W,
         backgroundColor: '#5FE94950',
         flexDirection: 'row',
-        borderRadius: 12,
     },
     logoContainer: {
         width: W * (2 / 5),

@@ -1,12 +1,13 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { Component } from 'react';
-import MapView, { PROVIDER_GOOGLE, } from 'react-native-maps';
-import { StyleSheet, Dimensions } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 export default class ChooseLocation extends Component {
   render() {
     return (
+      <View style={styles.container}>
         <MapView
           style={styles.map}
           provider={PROVIDER_GOOGLE}
@@ -17,8 +18,10 @@ export default class ChooseLocation extends Component {
             longitudeDelta: 0.0421,
           }}
         />
+      </View>
     );
   }
+  
 }
 
 const styles = StyleSheet.create({

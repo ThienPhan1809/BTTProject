@@ -8,7 +8,7 @@ import { StatusBar } from 'react-native';
 
 import ProductScreen from './Screen/ProductScreen';
 import NotificationScreen from './Screen/NotificationScreen';
-import HistoryScreen from './Screen/HistoryScreen';
+import SetScheduleScreen from './Screen/SetScheduleScreen';
 import SettingScreen from './Screen/SettingScreen';
 
 
@@ -20,8 +20,8 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
+      <NavigationContainer>
+        <Tab.Navigator>
         <Tab.Screen 
           name="Product" 
           component={ProductScreen}
@@ -29,6 +29,19 @@ export default function App() {
             title: 'Product',
             tabBarIcon: ({ focused, color }) => < Icon 
               name={focused ? 'home' : 'home-outline'} 
+              size={ICON_SIZE} 
+              color={color} 
+            />,
+            tabBarColor: '#ff4757',
+        }}
+        />
+        <Tab.Screen 
+          name="Schedule" 
+          component={SetScheduleScreen} 
+          options={{
+            title: 'Cart',
+            tabBarIcon: ({ color }) => < Entypo 
+              name={'back-in-time'} 
               size={ICON_SIZE} 
               color={color} 
             />,
@@ -49,19 +62,6 @@ export default function App() {
         }}
         />
         <Tab.Screen 
-          name="History" 
-          component={HistoryScreen} 
-          options={{
-            title: 'History',
-            tabBarIcon: ({ color }) => < Entypo 
-              name={'back-in-time'} 
-              size={ICON_SIZE} 
-              color={color} 
-            />,
-            tabBarColor: '#ff4757',
-        }}
-        />
-        <Tab.Screen 
           name="Setting" 
           component={SettingScreen} 
           options={{
@@ -75,7 +75,7 @@ export default function App() {
         }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
-    
+      </NavigationContainer>
   );
 }
+

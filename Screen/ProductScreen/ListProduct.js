@@ -14,18 +14,14 @@ import {
 } from 'react-native';
 import data from './data';
 
-export default class Product extends Component {
+export default class ListProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 0,
+            index: 0,
         };
     }
-    handlePress = (item) => {
-        this.decrementCount();
-        this.setState({ count: item.id });
-      }
-    renderItem = ({ item, index }) => (
+    renderItem = ({ item }) => (
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
                     <Image source={item.url} style={{ width: 40, height: 40 }} />
@@ -36,20 +32,20 @@ export default class Product extends Component {
                     <View style={styles.chooseNumberOfItemsContainer}>
                         <TouchableOpacity 
                         style={styles.changeNumberOfItemsButton}
-                        handlePress={() => {
-                            if (this.state.count === 0) return;
-                            const i = this.state.count - 1;
-                            this.setState({ count: i });
+                        onPress={() => {
+                            if (this.state.index === 0) return;
+                            const i = this.state.index - 1;
+                            this.setState({ index: i });
                           }}
                         >
                             <Text style={styles.text}>-</Text>
                         </TouchableOpacity>
-                        <Text style={{ marginHorizontal: 5, fontSize: 18 }}>
-                            {this.state.count}
-                        </Text>
+                            <Text style={{ marginHorizontal: 5, fontSize: 18 }}>
+                                {this.state.index}
+                            </Text>
                         <TouchableOpacity 
                         style={styles.changeNumberOfItemsButton}
-                        handlePress={() => {
+                        onPress={() => {
                             if (this.state.index === 10) return;
                             const i = this.state.index + 1;
                             this.setState({ index: i });
